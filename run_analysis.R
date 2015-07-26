@@ -7,7 +7,7 @@ if (!file.exists(zipFile)){
   fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip "
   download.file(fileUrl, zipFile, method="curl")
 }  
-if (!file.exists("UCI HAR Dataset")) unzip(filename)
+if (!file.exists("UCI HAR Dataset")) unzip(zipFile)
 
 ## get desired feature row indicies (mean & std only)
 allFeatures <- as.character(read.table("UCI HAR Dataset/features.txt")[,2])
